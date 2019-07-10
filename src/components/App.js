@@ -8,6 +8,7 @@ import Help from './Help'
 import Load from './Load'
 import Story from './Story'
 import End from './End'
+import './main.css'
 
 const App = () => {
     return (
@@ -20,8 +21,8 @@ const App = () => {
                 <Route path="/load" exact component={Load}/>
                 <Route path="/story" exact component={Story}/>
                 <Route path="/end" exact component={End}/>
-                <Footer/>
             </BrowserRouter>
+            <Footer/>
         </div>
     )
 }

@@ -2,10 +2,10 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <div>
-            <a href="#">Github</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+        <div className="footer">
+            <a href="#" className="footer__item">Github</a>
+            <a href="#" className="footer__item">About</a>
+            <a href="#" className="footer__item">Contact</a>
         </div>
     )
 }
