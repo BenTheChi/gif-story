@@ -1,7 +1,14 @@
-export const loadStory = (story) => {
+import history from '../history'
+
+export const loadStory = formValues => {
+    console.log("testing")
+    console.log(formValues)
+
+    history.push('/title');
+
     return {
-        type: 'LOAD_STORY',
-        payload: story
+        type: 'CREATE_STORY',
+        payload: formValues
     }
 }
 

@@ -4,7 +4,13 @@ body{
 }
 
 .home__main{
-    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 75vh;
+    width: 100%;
 }
 
 .gif__container{
@@ -16,9 +22,34 @@ body{
     margin: 1rem;
 }
 
-#home-gif{
-    width: 70%;
-    height: 60%;
+.story,.end{
+    flex-direction: column;
+}
+
+.story__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 95vh;
+    width: 100%;
+}
+
+#home-gif,#story-gif{
+    width: 100%;
+    height: 100%;
+}
+
+#end-gif{
+    width: 100%;
+}
+
+#story-text{
+    text-align: center;
+    font-family: 'Carter One', cursive;
+    font-size: 1.5rem;
+    margin: 0;
 }
 
 .input__area{
@@ -85,15 +116,40 @@ body{
     margin: .5rem 1rem;
 }
 
+.title__container{
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title__title{
+    font-family: 'DM Serif Display', serif;
+}
+
+.page__container{
+    font-size: 1rem;
+}
+
 button{
     color: white;
     background-color: darkgreen;
     font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     border: none;
 }
 
 button:hover,:active{
+    color: black;
+}
+
+a{
+    color: white;
+    text-decoration:none;
+}
+
+a:hover{
     color: black;
 }
 
@@ -122,19 +178,25 @@ button:hover,:active{
     
     button{
         margin: auto;
+        font-size: 1.5rem;
     }
 
     .gif__container{
         height: 20rem;
         margin: 2rem;
-    }
-    
-    .home__main{
-        margin-top: 5rem;
+        margin-top: .5rem;
     }
 
-    #home-gif{
-        width: 30rem;
-        height: 100%;
+    .page__container{
+        font-size: 1.5rem;
+    }    
+
+    #story-text{
+        font-size: 2.5rem;
+    }
+
+    #end-gif{
+        height: 20rem;
+        width: 25rem;
     }
 }

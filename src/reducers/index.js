@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 
 //Loads current story and changes the preferred GIF of current story
 const editStoryReducer = (story=null, action) => {
@@ -18,5 +19,6 @@ const editStoriesReducer = (stories=null, action) => {
 export default combineReducers({
     story: editStoryReducer,
     currentSlide: currentSlideReducer,
-    stories: editStoriesReducer
+    stories: editStoriesReducer,
+    form: formReducer
 })
