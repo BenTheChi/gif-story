@@ -21,6 +21,8 @@ const currentSlideReducer = (currentSlide=1, action) => {
         case 'GET_SLIDE':
             return currentSlide
         case 'CHANGE_SLIDE':
+            console.log("Currently: ", currentSlide)
+            console.log("Changing to: ", action.payload)
             return action.payload
         default:
             return currentSlide

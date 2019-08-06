@@ -8,9 +8,25 @@ class Story extends React.Component {
         this.props.getStory()
     }
 
-    render(){
-        console.log(this.props)
+    onNext = () => {
+        if(this.props.story && this.props.slide){
+            const max = this.props.story.slides.length
 
+            if(this.props.slide + 1 <= max){
+                this.props.changeCurrentSlide(this.props.slide + 1)
+            }
+        }
+    }
+
+    onPrevious = () => {
+        if(this.props.story && this.props.slide){
+            if(this.props.slide - 1 > 0){
+                this.props.changeCurrentSlide(this.props.slide - 1)
+            }
+        }
+    }
+    
+    render(){
         let slide = 0
         let src = "https://giphy.com/embed/gw3IWyGkC0rsazTi"
         let text = "Test"
@@ -33,13 +49,13 @@ class Story extends React.Component {
                 </div>
                 <div className="button__menu">
                     <div className="button__container">
-                        <button type="button" id="prev">Previous</button>
+                        <button type="button" id="prev" onClick={this.onPrevious}>Previous</button>
                     </div>
                     <div className="button__container">
                         <button type="button" id="new">New GIF</button>
                     </div>
                     <div className="button__container">
-                        <button type="button" id="next">Next</button>
+                        <button type="button" id="next" onClick={this.onNext}>Next</button>
                     </div>
                 </div>
             </div>
@@ -48,7 +64,6 @@ class Story extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {story: state.story, slide: state.slide}
 }
 
