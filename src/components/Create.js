@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {loadStory} from '../actions'
-import CreateForm from './CreateForm';
+import {createStory} from '../actions'
+import CreateForm from './CreateForm'
 
 class Create extends React.Component {
 
     onSubmit = formValues => {
-        this.props.loadStory(formValues)
+        this.props.createStory(formValues)
     }
 
     render(){
@@ -18,4 +18,4 @@ class Create extends React.Component {
     }
 }
 
-export default connect(null,{loadStory})(Create);
+export default connect(null,{createStory})(Create);

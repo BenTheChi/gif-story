@@ -3,12 +3,11 @@ import {Link} from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
 class CreateForm extends React.Component {
-    
     renderTitle = ({input, label}) => {
         return(
             <div className="create__container">
                 <label htmlFor="storyTitle"><h1 className="create__title">{label}</h1></label>
-                <input  {...input} type="text" id="storyTitle" placeholder="Example - Happy People: A Tragedy" className="input__area"></input>
+                <input {...input} type="text" id="storyTitle" placeholder="Example - Happy People: A Tragedy" className="input__area"></input>
             </div>
         )
     }
@@ -22,13 +21,13 @@ class CreateForm extends React.Component {
         )
     }
 
-    // onSubmit = (formValues) => {
-    //     this.props.onSubmit(formValues)
-    // }
+    onSubmit = (formValues) => {
+        this.props.onSubmit(formValues)
+    }
 
     render(){
         return (
-            <form onSubmit={this.props.handleSubmit} className="form-group">
+            <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="form-group">
                 <Field name="title" component={this.renderTitle} label="Title"/>
                 <Field name="body" component={this.renderBody} label="Story"/>
                 <div className="button__menu">
@@ -44,4 +43,6 @@ class CreateForm extends React.Component {
     }
 }
 
-export default reduxForm({form: 'create'})(CreateForm);
+export default reduxForm({
+    form: 'create'
+})(CreateForm);

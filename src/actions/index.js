@@ -1,21 +1,36 @@
 import history from '../history'
+import Story from '../story/Story'
+import builder from '../story/builder'
 
-export const loadStory = formValues => {
-    console.log("testing")
-    console.log(formValues)
+export const createStory = formValues => async dispatch => {
+    let slides = null
+    let story = null
+
+    if(formValues.body){
+        slides = await builder(formValues.body)
+    }
+
+    story = new Story(formValues.title, slides)
+
+    dispatch({
+        type: 'CREATE_STORY',
+        payload: story
+    })
 
     history.push('/title');
-
-    return {
-        type: 'CREATE_STORY',
-        payload: formValues
-    }
 }
 
 export const changeCurrentSlide = (slide) => {
     return {
         type: 'CHANGE_SLIDE',
         payload: slide
+    }
+}
+
+export const getCurrentSlide = () => {
+    return {
+        type: 'GET_SLIDE',
+        payload: null
     }
 }
 
@@ -36,6 +51,20 @@ export const loadStories = (stories) => {
 export const deleteStory = (story) => {
     return {
         type: 'DELETE_STORY',
+        payload: story
+    }
+}
+
+export const saveStory = (story) => {
+    return {
+        type: 'SAVE_STORY',
+        payload: story
+    }
+}
+
+export const getStory = (story) => {
+    return {
+        type: 'GET_STORY',
         payload: story
     }
 }
