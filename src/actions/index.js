@@ -10,7 +10,7 @@ export const createStory = formValues => async dispatch => {
         slides = await builder(formValues.body)
     }
 
-    story = new Story(formValues.title, slides)
+    story = new Story(formValues.title.toUpperCase(), slides)
 
     dispatch({
         type: 'CREATE_STORY',

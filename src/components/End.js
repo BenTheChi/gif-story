@@ -1,4 +1,6 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
+
 
 const End = () => {
     return (
@@ -8,13 +10,13 @@ const End = () => {
             </div>
             <div className="button__menu">
                 <div className="button__container">
-                    <button type="button" id="prev">Previous</button>
+                    <button type="button" id="prev"><Link to={`/story`}>Previous</Link></button>
                 </div>
                 <div className="button__container">
                     <button type="button" id="save">Save</button>
                 </div>
                 <div className="button__container">
-                    <button type="button" id="home">Home</button>
+                    <button type="button" id="home"><Link to={`/`}>Home</Link></button>
                 </div>
             </div>
         </div>

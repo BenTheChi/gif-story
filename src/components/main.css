@@ -47,7 +47,7 @@ body{
 
 #story-text{
     text-align: center;
-    font-family: 'Carter One', cursive;
+    font-family: 'Fondamento', cursive;
     font-size: 1.5rem;
     margin: 0;
 }
@@ -125,7 +125,8 @@ body{
 }
 
 .title__title{
-    font-family: 'DM Serif Display', serif;
+    font-size: 3em;
+    font-family: 'Leckerli One', cursive;
 }
 
 .page__container{

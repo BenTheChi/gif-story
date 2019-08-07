@@ -1,4 +1,5 @@
 import React from 'react'
+import history from '../history'
 import { connect } from 'react-redux';
 import { getStory, getCurrentSlide, changeCurrentSlide, changeCurrentGif } from '../actions';
 
@@ -15,6 +16,9 @@ class Story extends React.Component {
             if(this.props.slide + 1 <= max){
                 this.props.changeCurrentSlide(this.props.slide + 1)
             }
+            else{
+                history.push('/end');
+            }
         }
     }
 
@@ -22,6 +26,9 @@ class Story extends React.Component {
         if(this.props.story && this.props.slide){
             if(this.props.slide - 1 > 0){
                 this.props.changeCurrentSlide(this.props.slide - 1)
+            }
+            else{
+                history.push('/title');
             }
         }
     }
