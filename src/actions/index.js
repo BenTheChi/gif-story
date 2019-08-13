@@ -41,30 +41,39 @@ export const changeCurrentGif = (num) => {
     }
 }
 
-export const loadStories = (stories) => {
+export const getStories = () => {
+    const stories = JSON.parse(window.localStorage.getItem("stories"))
+
     return {
-        type: 'LOAD_STORIES',
+        type: 'GET_STORIES',
         payload: stories
     }
 }
 
-export const deleteStory = (story) => {
+export const deleteStory = (title) => {
+    const stories = JSON.parse(window.localStorage.getItem("stories"))
+    delete stories[title]
+    window.localStorage.setItem("stories", JSON.stringify(stories))
+
     return {
         type: 'DELETE_STORY',
-        payload: story
-    }
-}
-
-export const saveStory = (story) => {
-    return {
-        type: 'SAVE_STORY',
-        payload: story
+        payload: stories
     }
 }
 
 export const getStory = (story) => {
     return {
         type: 'GET_STORY',
+        payload: story
+    }
+}
+
+export const loadStory = (title) => {
+    const stories = JSON.parse(window.localStorage.getItem("stories"))
+    const story = stories[title]
+
+    return {
+        type: 'LOAD_STORY',
         payload: story
     }
 }

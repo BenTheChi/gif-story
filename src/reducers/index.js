@@ -10,6 +10,8 @@ const storyReducer = (story=null, action) => {
             return story
         case 'CHANGE_GIF':
             return action.payload
+        case 'LOAD_STORY':
+            return action.payload
         default:
             return story;
     }
@@ -21,8 +23,6 @@ const currentSlideReducer = (currentSlide=1, action) => {
         case 'GET_SLIDE':
             return currentSlide
         case 'CHANGE_SLIDE':
-            console.log("Currently: ", currentSlide)
-            console.log("Changing to: ", action.payload)
             return action.payload
         default:
             return currentSlide
@@ -30,14 +30,12 @@ const currentSlideReducer = (currentSlide=1, action) => {
 }
 
 //Deletes and loads stories
-const editStoriesReducer = (stories=null, action) => {
+const savedStoriesReducer = (stories={}, action) => {
     switch(action.type){
-        case 'LOAD_STORIES':
-            return {...stories}
+        case 'GET_STORIES':
+            return action.payload
         case 'DELETE_STORY':
-            return {...stories}
-        case 'SAVE_STORY':
-            return {...stories}
+            return action.payload
         default:
             return stories;
     }
@@ -46,6 +44,6 @@ const editStoriesReducer = (stories=null, action) => {
 export default combineReducers({
     story: storyReducer,
     slide: currentSlideReducer,
-    stories: editStoriesReducer,
+    stories: savedStoriesReducer,
     form: formReducer
 })
