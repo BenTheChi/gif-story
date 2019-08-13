@@ -6,7 +6,6 @@ import {getStory} from '../actions'
 class Title extends React.Component {
     componentDidMount(){
         this.props.getStory()
-        console.log(this.props)
     }
 
     render(){
