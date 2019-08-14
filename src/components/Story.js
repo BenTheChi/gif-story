@@ -33,6 +33,10 @@ class Story extends React.Component {
         }
     }
     
+    onNewGif = () => {
+        this.props.changeCurrentGif(this.props.story, this.props.slide)
+    }
+
     render(){
         let slide = 0
         let src = "https://giphy.com/embed/gw3IWyGkC0rsazTi"
@@ -59,7 +63,7 @@ class Story extends React.Component {
                         <button type="button" id="prev" onClick={this.onPrevious}>Previous</button>
                     </div>
                     <div className="button__container">
-                        <button type="button" id="new">New GIF</button>
+                        <button type="button" id="new" onClick={this.onNewGif}>New GIF</button>
                     </div>
                     <div className="button__container">
                         <button type="button" id="next" onClick={this.onNext}>Next</button>

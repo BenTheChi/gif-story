@@ -3,6 +3,9 @@ import { reducer as formReducer } from 'redux-form'
 
 //Loads current story and changes the preferred GIF of current story
 const storyReducer = (story=null, action) => {
+    // console.log(story)
+    // console.log(action.payload)
+
     switch(action.type){
         case 'CREATE_STORY':
             return action.payload

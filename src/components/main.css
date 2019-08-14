@@ -139,6 +139,8 @@ button{
     font-family: 'Oswald', sans-serif;
     font-size: 1rem;
     border: none;
+    cursor: pointer;
+    outline: none;
 }
 
 button:hover,:active{
@@ -152,6 +154,24 @@ a{
 
 a:hover{
     color: black;
+}
+
+.load__menu{
+    text-align: center;
+    display: block;
+    margin: 2rem;
+}
+
+.load__entry{
+
+}
+
+.button__story{
+
+}
+
+.button__delete:hover,:active{
+    color: red;
 }
 
 @media(min-width: 415px){

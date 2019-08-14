@@ -4,7 +4,7 @@ const parser = (body) => {
     body = body.replace(/\(/g,".(")
     body = body.replace(/\)/g,").")
     body = body.replace(/\n/g, ".")
-    body = body.replace(/\!/g,"!.")
+    body = body.replace(/!/g,"!.")
     body = body.replace(/\?/g,"?.")
     let sections = body.split(/[.,]/)
 
@@ -15,7 +15,7 @@ const parser = (body) => {
             sections.splice(i,1)
             continue;
         }
-        if(section.toUpperCase() == section){
+        if(section.toUpperCase() === section){
             continue;
         }
 
@@ -28,7 +28,7 @@ const parser = (body) => {
             let subSection = subSections[x]
             
             if(subSection.toUpperCase() === subSection && subSection !== "I" && subSection !== "A"){
-                if(newSection != ""){
+                if(newSection !== ""){
                     sections.splice(i+changes,0,newSection) 
                     changes++
                     sections.splice(i+changes,0,subSection)
@@ -45,7 +45,7 @@ const parser = (body) => {
             }
         }
 
-        if(changes != 0){
+        if(changes !== 0){
             i += changes
             sections.splice(i,1,newSection.trim())
         }
@@ -67,12 +67,11 @@ const buildSlides = async (body) => {
 
         let keywords = sections[i]
 
-        // IMPLEMENT IMAGES HERE FOR ALL CAPS    
         promises.push(axios.get(`http://api.giphy.com/v1/gifs/search?q=${keywords.split(' ').join('+')}&api_key=G5mb3AgMEZjKJQoTTsZWoAbC841cxpzw&limit=1`)
             .then((response) => {
                 var embed_url
 
-                if(response.data.data.length == 0){
+                if(response.data.data.length === 0){
                     embed_url = "https://giphy.com/embed/3o7aTskHEUdgCQAXde"
                     keywords = "No GIFs found for - " + keywords.trim()
                 }

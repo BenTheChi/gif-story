@@ -34,11 +34,14 @@ export const getCurrentSlide = () => {
     }
 }
 
-export const changeCurrentGif = (num) => {
-    return {
+export const changeCurrentGif = (story, slide) => async dispatch => {
+    const newStory = new Story(story.title, story.slides)
+    await newStory.changeGif(slide)
+
+    dispatch({
         type: 'CHANGE_GIF',
-        payload: num
-    }
+        payload: newStory
+    })
 }
 
 export const getStories = () => {
@@ -70,7 +73,7 @@ export const getStory = (story) => {
 
 export const loadStory = (title) => {
     const stories = JSON.parse(window.localStorage.getItem("stories"))
-    const story = stories[title]
+    const story = new Story(title, stories[title])
 
     return {
         type: 'LOAD_STORY',
