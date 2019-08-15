@@ -29,6 +29,7 @@ class Load extends React.Component {
                 <button className="button__story" onClick={() => this.loadEntry(title)}>
                     {title}
                 </button>
+                <br/>
                 <button className="button__delete" onClick={() => this.deleteEntry(title)}>DELETE</button>
             </div>
             )

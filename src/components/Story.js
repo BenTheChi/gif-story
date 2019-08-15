@@ -56,8 +56,8 @@ class Story extends React.Component {
                 <div id="pageContainer" className="page__container">Page <span id="pageCounter">{slide}</span></div>
                 <div className="gif__container story">
                     <iframe src={src} frameBorder="0" title="story" id="story-gif"></iframe>
-                    <p id="story-text">{text}</p>
                 </div>
+                <p id="story-text">{text}</p>
                 <div className="button__menu">
                     <div className="button__container">
                         <button type="button" id="prev" onClick={this.onPrevious}>Previous</button>
