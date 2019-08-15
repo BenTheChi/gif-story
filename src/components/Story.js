@@ -39,18 +39,31 @@ class Story extends React.Component {
 
     render(){
         let slide = 0
-        let src = "https://giphy.com/embed/gw3IWyGkC0rsazTi"
-        let text = "Test"
-
-        if(this.props.slide){
-            slide = this.props.slide
-        }
+        let src = "https://giphy.com/embed/Igh0Fg7259bSU"
+        let text = "No story loaded!"
 
         if(this.props.story){
+            slide = this.props.slide
             src = this.props.story.slides[slide-1].embed_url
             text = this.props.story.slides[slide-1].keywords
         }
 
+        if(slide === 0){
+            return (
+                <div className="story__container">
+                    <div id="pageContainer" className="page__container">Page <span id="pageCounter">{slide}</span></div>
+                    <div className="gif__container story">
+                        <iframe src={src} frameBorder="0" title="story" id="story-gif"></iframe>
+                    </div>
+                    <p id="story-text">{text}</p>
+                    <div className="button__menu">
+                        <div className="button__container">
+                            <button type="button" id="prev" onClick={() => {history.push('/')}}>Home</button>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
         return (
             <div className="story__container">
                 <div id="pageContainer" className="page__container">Page <span id="pageCounter">{slide}</span></div>

@@ -15,7 +15,7 @@ export default class Story {
         .then((response) => {
             let embed_url = originalUrl
 
-            if(response.data.data.length == 0){
+            if(response.data.data.length === 0){
                 embed_url = "https://giphy.com/embed/3o7aTskHEUdgCQAXde"
                 keywords = "No GIFs found for - " + keywords.trim()
             }

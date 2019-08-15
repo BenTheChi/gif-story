@@ -13,6 +13,7 @@ class Create extends React.Component {
     render(){
         return (
             <div>
+                <h1 className="title__home">Create Story</h1>
                 <CreateForm onSubmit={this.onSubmit}/>
             </div>
         )

@@ -9,14 +9,26 @@ class Title extends React.Component {
     }
 
     render(){
-        return (
-            <div className="title__container">
-                <div>
-                    <h1 className="title__title">{this.props.title}</h1>
-                    <button><Link to={`/story`}>Start</Link></button>
+        if(this.props.title){
+            return (
+                <div className="title__container">
+                    <div>
+                        <h1 className="title__title">{this.props.title}</h1>
+                        <button><Link to={`/story`}>Start</Link></button>
+                    </div>
                 </div>
-            </div>
-        )
+            )
+        }
+        else{
+            return (
+                <div className="title__container">
+                    <div>
+                        <h1 className="title__title">No Story Loaded!</h1>
+                        <button><Link to={`/`}>Home</Link></button>
+                    </div>
+                </div>
+            )
+        }
     }
 }
 
