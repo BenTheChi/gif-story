@@ -19,7 +19,15 @@ class Load extends React.Component {
     }
 
     renderList(){
-        const storyArray = Object.entries(this.props.stories)
+        let storyArray = []
+
+        if(this.props.stories){
+            storyArray = Object.entries(this.props.stories)
+        }
+
+        if(storyArray.length === 0){
+            return(<h2>No stories saved yet!</h2>)
+        }
 
         const entries = storyArray.map((story) => {
             const title = story[0]
@@ -35,9 +43,6 @@ class Load extends React.Component {
             )
         })
 
-        if(entries.length === 0){
-            return(<h2>No stories saved yet!</h2>)
-        }
 
         return entries
     }
