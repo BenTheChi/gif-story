@@ -5,27 +5,25 @@ import { getStory } from '../actions';
 
 
 class End extends React.Component {
-    componentDidMount(){
-        this.props.getStory()
-    }
-
     onSave = () => {
         let title = this.props.title
         let slides = this.props.slides
         let stories = {}
+
+        this.props.getStory()
+
         if(window.localStorage.getItem("stories")){
             stories = JSON.parse(window.localStorage.getItem("stories"))
         }
 
         stories[title] = slides
-        console.log(stories)
         window.localStorage.setItem("stories", JSON.stringify(stories))
 
         if(JSON.parse(window.localStorage.getItem("stories"))[title]){
             alert(this.props.title + " saved successfully!")
         }
         else{
-            alert(this.props.title + " saved failed!")
+            alert(this.props.title + " save failed!")
         }
     }
 

@@ -6,8 +6,10 @@ import CreateForm from './CreateForm'
 class Create extends React.Component {
 
     onSubmit = formValues => {
-        this.props.createStory(formValues)
-        this.props.changeCurrentSlide(1)
+        if(formValues.title && formValues.body){
+            this.props.createStory(formValues)
+            this.props.changeCurrentSlide(1)
+        }
     }
 
     render(){

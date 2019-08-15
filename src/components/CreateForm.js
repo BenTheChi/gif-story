@@ -16,7 +16,7 @@ class CreateForm extends React.Component {
         return(
             <div className="create__container">
                 <label htmlFor="storyBody"><h1 className="create__title">{label}</h1></label>
-                <textarea {...input} id="storyBody" rows="15" placeholder="Sections are divided by any punctuation or enclosed in parenthesis.  Sections longer than 80 characters are ignored." className="input__area"></textarea>
+                <textarea {...input} id="storyBody" rows="15" placeholder="Sections are divided by punctuation, parenthesis, numbers, and new lines.  Sections longer than 80 characters are ignored." className="input__area"></textarea>
             </div>
         )
     }

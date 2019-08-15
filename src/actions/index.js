@@ -20,10 +20,30 @@ export const createStory = formValues => async dispatch => {
     history.push('/title');
 }
 
-export const changeCurrentSlide = (slide) => {
+export const newGif = (story, slide) => async dispatch => {
+    const newStory = new Story(story.title, story.slides)
+    await newStory.changeGif(slide)
+
+    dispatch({
+        type: 'CHANGE_GIF',
+        payload: newStory
+    })
+}
+
+export const loadStory = (title) => {
+    const stories = JSON.parse(window.localStorage.getItem("stories"))
+    const story = new Story(title, stories[title])
+
     return {
-        type: 'CHANGE_SLIDE',
-        payload: slide
+        type: 'LOAD_STORY',
+        payload: story
+    }
+}
+
+export const getStory = (story) => {
+    return {
+        type: 'GET_STORY',
+        payload: story
     }
 }
 
@@ -34,14 +54,11 @@ export const getCurrentSlide = () => {
     }
 }
 
-export const changeCurrentGif = (story, slide) => async dispatch => {
-    const newStory = new Story(story.title, story.slides)
-    await newStory.changeGif(slide)
-
-    dispatch({
-        type: 'CHANGE_GIF',
-        payload: newStory
-    })
+export const changeCurrentSlide = (slide) => {
+    return {
+        type: 'CHANGE_SLIDE',
+        payload: slide
+    }
 }
 
 export const getStories = () => {
@@ -61,22 +78,5 @@ export const deleteStory = (title) => {
     return {
         type: 'DELETE_STORY',
         payload: stories
-    }
-}
-
-export const getStory = (story) => {
-    return {
-        type: 'GET_STORY',
-        payload: story
-    }
-}
-
-export const loadStory = (title) => {
-    const stories = JSON.parse(window.localStorage.getItem("stories"))
-    const story = new Story(title, stories[title])
-
-    return {
-        type: 'LOAD_STORY',
-        payload: story
     }
 }

@@ -1,7 +1,8 @@
 import React from 'react'
 import history from '../history'
+import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getStory, getCurrentSlide, changeCurrentSlide, changeCurrentGif } from '../actions';
+import { getStory, getCurrentSlide, changeCurrentSlide, newGif } from '../actions';
 
 class Story extends React.Component {
 
@@ -34,7 +35,9 @@ class Story extends React.Component {
     }
     
     onNewGif = () => {
-        this.props.changeCurrentGif(this.props.story, this.props.slide)
+        if(this.props.story && this.props.slide){
+            this.props.changeCurrentGif(this.props.story, this.props.slide)
+        }
     }
 
     render(){
@@ -48,6 +51,7 @@ class Story extends React.Component {
             text = this.props.story.slides[slide-1].keywords
         }
 
+        //If there is no story loaded
         if(slide === 0){
             return (
                 <div className="story__container">
@@ -58,12 +62,13 @@ class Story extends React.Component {
                     <p id="story-text">{text}</p>
                     <div className="button__menu">
                         <div className="button__container">
-                            <button type="button" id="prev" onClick={() => {history.push('/')}}>Home</button>
+                            <button type="button" id="prev"><Link to={`/`}>Home</Link></button>
                         </div>
                     </div>
                 </div>
             )
         }
+        
         return (
             <div className="story__container">
                 <div id="pageContainer" className="page__container">Page <span id="pageCounter">{slide}</span></div>
@@ -91,4 +96,4 @@ const mapStateToProps = (state) => {
     return {story: state.story, slide: state.slide}
 }
 
-export default connect(mapStateToProps, {getStory, getCurrentSlide, changeCurrentSlide, changeCurrentGif})(Story);
+export default connect(mapStateToProps, {getStory, getCurrentSlide, changeCurrentSlide, changeCurrentGif: newGif})(Story);

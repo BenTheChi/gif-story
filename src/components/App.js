@@ -22,8 +22,8 @@ const App = () => {
                 <Route path="/load" exact component={Load}/>
                 <Route path="/story" exact component={Story}/>
                 <Route path="/end" exact component={End}/>
+                <Footer/>
             </Router>
-            <Footer/>
         </div>
     )
 }

@@ -1,55 +1,58 @@
 const axios = require('axios')
 
 const parser = (body) => {
+
+    //Keeping ( ) ! ?
     body = body.replace(/\(/g,".(")
     body = body.replace(/\)/g,").")
-    body = body.replace(/\n/g, ".")
     body = body.replace(/!/g,"!.")
     body = body.replace(/\?/g,"?.")
+
+    //Removing . , n/
+    body = body.replace(/\n/g, ".")
     let sections = body.split(/[.,]/)
 
-    for(let i=0; i<sections.length; i++){
-        let section = sections[i]
-        section = section.trim()
-        if(section.length < 1){
-            sections.splice(i,1)
-            continue;
-        }
-        if(section.toUpperCase() === section){
-            continue;
-        }
+    //Look at each section and make edits
+    // for(let i=0; i<sections.length; i++){
+    //     let section = sections[i]
+    //     section = section.trim()
 
-        let subSections = section.split(" ")
-        let newSection = ""
-        let changes = 0
+    //     if(section.length < 1){
+    //         sections.splice(i,1)
+    //         continue;
+    //     }
 
-        for(let x=0; x<subSections.length; x++){
+    //     //Breaking up each section into individual words (subSection)
+    //     let subSections = section.split(" ")
+    //     let newSection = ""
+    //     let changes = 0
+    //     for(let x=0; x<subSections.length; x++){
             
-            let subSection = subSections[x]
+    //         let subSection = subSections[x]
             
-            if(subSection.toUpperCase() === subSection && subSection !== "I" && subSection !== "A"){
-                if(newSection !== ""){
-                    sections.splice(i+changes,0,newSection) 
-                    changes++
-                    sections.splice(i+changes,0,subSection)
-                    changes ++
-                    newSection = ""
-                }
-                else{
-                    sections.splice(i,0,subSection)
-                    changes++
-                }
-            }
-            else{
-                newSection += subSection + " "
-            }
-        }
+    //         if(subSection !== "I" && subSection !== "A"){
+    //             if(newSection !== ""){
+    //                 sections.splice(i+changes,0,newSection) 
+    //                 changes++
+    //                 sections.splice(i+changes,0,subSection)
+    //                 changes ++
+    //                 newSection = ""
+    //             }
+    //             else{
+    //                 sections.splice(i,0,subSection)
+    //                 changes++
+    //             }
+    //         }
+    //         else{
+    //             newSection += subSection + " "
+    //         }
+    //     }
 
-        if(changes !== 0){
-            i += changes
-            sections.splice(i,1,newSection.trim())
-        }
-    }
+    //     if(changes !== 0){
+    //         i += changes
+    //         sections.splice(i,1,newSection.trim())
+    //     }
+    // }
 
     return sections
 }
