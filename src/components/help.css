@@ -1,0 +1,12 @@
+.help__container{
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.help__container ul{
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+}

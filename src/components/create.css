@@ -1,0 +1,32 @@
+.create__form{
+    margin-top: 5rem;
+}
+
+.create__container{
+    text-align: center;
+    display: block;
+    margin: 2rem;
+}
+
+.create__container input,textarea{
+    width: 90%;
+    border: 3px solid green;
+    background: lightgray;
+}
+
+.create__title{
+    font-family: 'Carter One', cursive;
+    color: white;
+    margin: .5rem;
+    font-size: 1.5rem;
+}
+
+.input__area{
+    font-family: 'Carter One', cursive;
+}
+
+@media(min-width: 540px){
+    .create__title{
+        font-size: 2rem;
+    }
+}

@@ -9,6 +9,11 @@ import Load from './Load'
 import Story from './Story'
 import End from './End'
 import './main.css'
+import './create.css'
+import './footer.css'
+import './help.css'
+import './story.css'
+import './title.css'
 import history from '../history'
 
 const App = () => {

@@ -1,0 +1,29 @@
+.title__home{
+    background-color: darkgreen;
+    color: white;
+    font-family: 'Carter One', cursive;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.title__container{
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title__title{
+    font-size: 6em;
+    color: white;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+@media(min-width: 540px){
+    .title__home{
+        font-size: 3rem;
+    }
+}

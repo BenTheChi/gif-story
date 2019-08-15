@@ -11,6 +11,7 @@ const Help = () => {
                 <li>'New Gif' will replace a gif for a particular section</li>
                 <li>You can save your story with it's current Gifs to your local storage after the last slide</li>
                 <li>To load or delete saved stories go to the 'Load' screen</li>
+                <li>There is currently a limit on my Giphy API key of 42 requests an hours, 1000 a day so you may encounter errors with large stories or repeated requests</li>
             </ul>
             <button><Link to={`/`}>Home</Link></button>
         </div>

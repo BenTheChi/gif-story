@@ -1,8 +1,3 @@
-body{
-    margin: 0;
-    background-color: olive;
-}
-
 .home__main{
     display: flex;
     align-items: center;
@@ -20,7 +15,7 @@ body{
     text-align: center;
     padding: 0;
     margin: 1rem;
-    height: 70%;
+    height: 30%;
     width:75%;
 }
 
@@ -28,96 +23,9 @@ body{
     flex-direction: column;
 }
 
-.story__container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    height: 95vh;
-    width: 100%;
-}
-
-#home-gif{
-    width: 63%;
-    height: 100%;
-}
-
-#story-gif{
+#home-gif, #story-gif, #end-gif{
     width: 100%;
     height: 100%;
-}
-
-#end-gif{
-    height: 100%;
-    width: 100%;
-}
-
-#story-text{
-    text-align: center;
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 4rem;
-    color: white;
-    margin-top: 0;
-    margin-bottom: 2rem;
-}
-
-.input__area{
-    font-family: 'Carter One', cursive;
-}
-
-.title__home{
-    background-color: darkgreen;
-    color: white;
-    font-family: 'Carter One', cursive;
-    font-size: 2rem;
-    margin: 0;
-    padding: 1rem;
-    text-align: center;
-}
-
-.create__form{
-    margin-top: 5rem;
-}
-
-.create__container{
-    text-align: center;
-    display: block;
-    margin: 2rem;
-}
-
-.create__container input,textarea{
-    width: 90%;
-    border: 3px solid green;
-    background: lightgray;
-}
-
-.create__title{
-    font-family: 'Carter One', cursive;
-    color: white;
-    margin: .5rem;
-    font-size: 1.5rem;
-}
-
-.footer{
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: darkgreen;
-}
-
-.footer__item{
-    margin: 0 .5rem;
-    font-family: 'Carter One', cursive;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.footer__item:hover{
-    color: black;
-    text-decoration: none;
 }
 
 .button__container{
@@ -126,47 +34,6 @@ body{
     margin: .5rem 1rem;
 }
 
-.title__container{
-    text-align: center;
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.title__title{
-    font-size: 6em;
-    color: white;
-    font-family: 'Luckiest Guy', cursive;
-}
-
-.page__container{
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-button{
-    color: white;
-    background-color: darkgreen;
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.7rem;
-    border: none;
-    cursor: pointer;
-    outline: none;
-}
-
-button:hover,:active{
-    color: black;
-}
-
-a{
-    color: white;
-    text-decoration:none;
-}
-
-a:hover{
-    color: black;
-}
 
 .load__menu{
     text-align: center;
@@ -193,33 +60,36 @@ a:hover{
     color: red;
 }
 
-.help__container{
-    font-size: 2rem;
-    font-family: 'Oswald', sans-serif;
-    text-align: center;
+body{
+    margin: 0;
+    background-color: olive;
+}
+
+button{
     color: white;
+    background-color: darkgreen;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.7rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
 }
 
-.help__container ul{
-    text-align: left;
-    margin-left: 20%;
-    margin-right: 20%;
+button:hover,:active{
+    color: black;
 }
 
-@media(min-width: 415px){
-    .title__home{
-        font-size: 3rem;
-    }
-    
-    .create__title{
-        font-size: 2rem;
-    }
-    
-    .footer__item{
-        font-size: 1.5rem;
-        margin: 0 2rem;
-    }
+a{
+    color: white;
+    text-decoration:none;
+}
 
+a:hover{
+    color: black;
+}
+
+
+@media(min-width: 540px){
     .button__container{
         display: inline;
         margin: 1rem;
@@ -228,22 +98,20 @@ a:hover{
     .button__menu{
         text-align: center;
     }
-    
-    button{
-        margin: auto;
-        font-size: 2rem;
-    }
 
     .gif__container{
         margin: 2rem;
         margin-top: .5rem;
+        height: 70%;
     }
 
-    .page__container{
-        font-size: 1.5rem;
-    }    
+    #home-gif, #story-gif, #end-gif{
+        width: 70%;
+        height: 100%;
+    }
 
-    /* #story-text{
-        font-size: 5rem;
-    } */
+    button{
+        margin: auto;
+        font-size: 2rem;
+    }
 }
